@@ -1,0 +1,21 @@
+{% extends 'streamd/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for video in gdrive %}
+        <div class="col-4 col-md-3 col-sm-12 m-4" >
+            <div class="card" >
+                <div class="card-img-top">
+                    <img src="{{ video.thumbnail }}" alt="">
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ video.title }}</h5>
+                <p class="card-text">{{ video.discription }}</p>
+                <a href="{% url 'video_stream' id=video.id %}" class="btn btn-primary">Play video</a>
+              </div>
+        </div>
+    </div>    
+</div>
+{% endblock %}
