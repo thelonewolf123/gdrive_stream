@@ -3,9 +3,12 @@ from django.http import StreamingHttpResponse
 from .models import Gdrive
 from .helper import download_file_from_google_drive
 
-def single_video(request):
+def single_video(request,id):
 
-    return render(request,'streamd/single-video.html')
+    context = {}
+    context['video'] = Gdrive.objects.get(pk=1)
+
+    return render(request,'streamd/single-video.html',context=context)
 
 def video_stream(request,id):
 
@@ -18,4 +21,4 @@ def video_list(request):
     gdrive = Gdrive.objects.all()
     context= {}
     context['gdrive'] = gdrive
-    return render(request,'streamd/video-list.html',context=gdrive)
+    return render(request,'streamd/video-list.html',context=context)

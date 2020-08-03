@@ -8,18 +8,15 @@ def get_confirm_token(response):
     return None
 
 def download_file_from_google_drive(gdrive_url):
-    
+
     id = gdrive_url.split('/')[5]
 
     URL = "https://docs.google.com/uc?export=download"
     session = requests.Session()
     response = session.get(URL, params = { 'id' : id }, stream = True)
     token = get_confirm_token(response)
-    print(f'Response status code - {response.status_code}')
-
-    if token:
-        params = { 'id' : id, 'confirm' : token }
-        response = session.get(URL, params = params, stream = True)
-
-        return response
-    return None
+    print('Response status code - {response.status_code}')
+    params = { 'id' : id, 'confirm' : token }
+    response = session.get(URL, params = params, stream = True)
+    return response
+    # return None
