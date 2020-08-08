@@ -2,9 +2,15 @@
 
 {% block content %}
 
-<div class="container">
-    <video width="320" height="240" controls>
-        <source src="{% url 'video_stream' id=video.id %}" type="video/mp4"></video>
+<div class="container mt-5 mb-5">
+    <video class="img-fluid w-100" controls>
+        <source src="https://www.googleapis.com/drive/v3/files/{{ file_id }}?key={{ api_key }}&alt=media" type="video/mp4">
+    </video>
+    <h3> {{ title }}</h3>
+    <br>
+    <p>
+        {{discription}}
+    </p>
 </div>
 
 {% endblock %}

@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row">
         {% for video in gdrive %}
-        <div class="col-4 col-md-3 col-sm-12 m-4" >
+        <div class="col-md-3 col-sm-12 m-4" >
             <div class="card" >
                 <div class="card-img-top">
-                    <img src="{{ video.thumbnail }}" alt="">
+                    <img src="/media/{{ video.thumbnail }}" alt="" class="img-thumbnail">
                 </div>
             </div>
             <div class="card-body">
