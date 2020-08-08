@@ -25,7 +25,7 @@ SECRET_KEY = 'mjwx12=eufc+v5l&2jgek0wr3wl-q2pz)2@mam!sftkwkbfod('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lonewolf123.pythonanywhere.com']
 
 
 # Application definition

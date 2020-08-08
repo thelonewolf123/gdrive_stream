@@ -7,6 +7,6 @@ class Gdrive(models.Model):
     thumbnail = models.ImageField(upload_to='streamd/thumbnail',null=False)
     gdrive_link = models.CharField(max_length=200,null=False)
 
-    def __str__(Self):
+    def __str__(self):
 
-        return Self.title
+        return self.title
